@@ -5,6 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class  AppComponent {
   title = 'bytebank';
+  transferencias: any[] = [];
+
+  transferir($event) {
+    const transferencia = {...$event, data: new Date()};
+    this.transferencias.push(transferencia);
+  }
 }
